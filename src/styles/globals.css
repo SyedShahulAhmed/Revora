@@ -1,1 +1,112 @@
 @import "tailwindcss";
+
+
+
+body {
+  font-family: var(--font-oxanium), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #09090b;
+}
+
+/* Chrome */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+  border-radius: 999px;
+  border: 2px solid #09090b;
+  box-shadow:
+    0 0 8px rgba(34, 211, 238, .5),
+    inset 0 0 6px rgba(255,255,255,.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #67e8f9;
+  box-shadow:
+    0 0 14px rgba(34,211,238,.75),
+    inset 0 0 8px rgba(255,255,255,.2);
+}
+
+
+@theme inline {
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-line-shadow: line-shadow 15s linear infinite;
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+}
+
+@keyframes blinkGlow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px #22d3ee;
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: scale(0.85);
+    box-shadow: 0 0 18px #22d3ee;
+  }
+}
+
+.animate-blink-glow {
+  animation: blinkGlow 2.8s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.4);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(34, 211, 238, 0.4);
+  color: white;
+}
