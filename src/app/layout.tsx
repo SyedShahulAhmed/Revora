@@ -25,7 +25,7 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", oxanium.variable, "font-sans")}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col">
         <Navbar />
         {children}
       </body>
