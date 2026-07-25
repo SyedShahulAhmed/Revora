@@ -5,8 +5,6 @@ import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { HudCorners } from "./HudCorners";
 import { Meteors } from "./Meteors";
-;
-
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Features", href: "#features" },
@@ -21,7 +19,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 py-4">
       {/* ================= NAVBAR ================= */}
       <nav className="relative isolate mx-auto flex h-16 w-full max-w-7xl items-center justify-between overflow-hidden border border-white/20 bg-black/35 px-5 backdrop-blur-3xl">
-        <Meteors  />
+        <Meteors />
         {/* Decorative Layers */}
         <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/5 to-transparent" />
         <div className="pointer-events-none absolute inset-0 ring-1 ring-white/5" />
@@ -57,7 +55,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Desktop CTA */}
             <Link
-              href="/auth/signin"
+              href="/auth/sign-in"
               className="group hidden h-11 items-center gap-2 rounded-lg border border-white/25  px-6 text-xs font-medium uppercase tracking-[0.28em] text-white backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/80 hover:bg-cyan-400/5 hover:text-cyan-300 lg:flex"
             >
               <span>Get Started</span>
