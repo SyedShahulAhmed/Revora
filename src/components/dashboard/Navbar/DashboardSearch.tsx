@@ -8,53 +8,30 @@ export default function DashboardSearch() {
       <div className="group relative w-full max-w-2xl">
         <Search
           size={18}
-          className="absolute top-1/2 left-4 -translate-y-1/2 text-zinc-500 transition-colors duration-300 group-focus-within:text-cyan-400"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 transition-colors duration-300 group-focus-within:text-cyan-400"
         />
+
         <input
           type="text"
           placeholder="Search projects, users, reviews..."
           className="
             h-11
             w-full
-            rounded-lg
+            rounded-xl
             border
-            border-white/15
-            bg-white/5
+            border-white/10
             pl-11
-            pr-20
+            pr-4
             text-sm
             text-white
             placeholder:text-zinc-500
-            backdrop-blur-xl
             outline-none
             transition-all
             duration-300
-            focus:border-cyan-400/70
-            focus:bg-cyan-400/5
+            focus:border-cyan-400
+            focus:shadow-[0_0_20px_rgba(34,211,238,0.12)]
           "
         />
-
-        <kbd
-          className="
-            absolute
-            right-3
-            top-1/2
-            -translate-y-1/2
-            rounded-md
-            border
-            border-white/10
-            bg-white/5
-            px-2
-            py-1
-            text-[10px]
-            font-medium
-            uppercase
-            tracking-wider
-            text-zinc-400
-          "
-        >
-          Ctrl K
-        </kbd>
       </div>
     </div>
   );
