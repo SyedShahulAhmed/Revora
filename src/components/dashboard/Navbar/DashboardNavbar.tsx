@@ -10,10 +10,9 @@ import { HudCorners } from "@/components/landing/HudCorners";
 export default function DashboardNavbar() {
   return (
     <header className="sticky top-0 z-50 px-4 py-4">
-      <nav className="relative isolate mx-auto flex h-16 w-full max-w-7xl items-center justify-between border border-white/20 bg-black/35 p-10 backdrop-blur-3xl ">
+      <nav data-meteor-container className="relative isolate mx-auto flex h-16 w-full max-w-7xl items-center justify-between border  border-white/20  p-10 backdrop-blur-sm ">
         <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-white/5 to-transparent" />
         <div className="pointer-events-none absolute inset-0 ring-1 ring-white/5" />
-
         <HudCorners />
 
         {/* Content */}
