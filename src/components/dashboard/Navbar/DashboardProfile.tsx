@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, LogOut, Settings, User } from "lucide-react";
-import { HudCorners } from "@/components/landing/HudCorners";
+import { LogOut, Settings, User } from "lucide-react";
 import { getCurrentUser, logout } from "@/services/auth.service";
+import { useRouter } from "next/navigation";
 
 type UserType = {
   name: string;
@@ -12,10 +12,12 @@ type UserType = {
 };
 
 export default function DashboardProfile() {
+  const [loggingOut, setLoggingOut] = useState(false);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<UserType | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   useEffect(() => {
     async function loadUser() {
       try {
@@ -30,13 +32,19 @@ export default function DashboardProfile() {
 
     loadUser();
   }, []);
+
   const handleLogout = async () => {
-  try {
-    await logout();
-  } catch (error) {
-    console.error(error);
-  }
-};
+    try {
+      setLoggingOut(true);
+      await logout();
+      router.replace("/auth/sign-in");
+      router.refresh();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoggingOut(false);
+    }
+  };
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -82,7 +90,7 @@ export default function DashboardProfile() {
         }`}
       >
         {/* Header */}
-        <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
+        <div className="flex items-center gap-3 border-b  border-white/10 px-5 py-4">
           {user?.avatar ? (
             <img
               src={user.avatar}
@@ -90,7 +98,7 @@ export default function DashboardProfile() {
               className="h-15 w-15 rounded-full object-cover"
             />
           ) : (
-            <div className="flex h-15 w-15 items-center justify-center rounded-full bg-cyan-400/10 text-sm font-bold text-cyan-300">
+            <div className="flex h-15 w-15 items-center bg-cyan-400/10 justify-center rounded-full  text-sm font-bold text-cyan-300">
               {user?.name?.charAt(0).toUpperCase() ?? "U"}
             </div>
           )}
@@ -126,9 +134,10 @@ export default function DashboardProfile() {
 
           <div className="my-2 border-t border-white/10" />
 
-          <button 
+          <button
+            disabled={loggingOut}
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm text-red-400 transition-all duration-200 hover:bg-red-500/10"
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm text-red-400 transition-all duration-200 hover:bg-red-500/10 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <LogOut size={18} />
             Sign Out
