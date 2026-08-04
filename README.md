@@ -2,7 +2,7 @@
 
 **Revora** is a community-driven platform where developers and creators can showcase projects, receive structured peer reviews, and improve through actionable feedback.
 
-## ✨ Features
+## Features
 
 * 📂 Project Showcase
 * ⭐ Ratings & Reviews
@@ -11,4 +11,4 @@
 * 👥 User Profiles
 * 🔍 Discover New Projects
 
-Built to help builders learn, improve, and grow together.
+Built to help builders learn, improve, and grow together
