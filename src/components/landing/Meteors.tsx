@@ -27,16 +27,15 @@ export const Meteors = ({
   );
 
   useEffect(() => {
-    // measure container width instead of window, so it works inside any wrapper
-    const width =
-      typeof document !== "undefined"
-        ? document.documentElement.clientWidth
-        : 1920;
+  const width =
+  document
+    ?.querySelector("[data-meteor-container]")
+    ?.clientWidth ?? 1920;
 
     const styles = [...new Array(number)].map(() => ({
       "--angle": -angle + "deg",
       top: "-5%",
-      left: `calc(0% + ${Math.floor(Math.random() * width)}px)`,
+      left: `${Math.floor(Math.random() * width)}px`,
       animationDelay:
         (Math.random() * (maxDelay - minDelay) + minDelay).toFixed(2) + "s",
       animationDuration:
