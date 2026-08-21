@@ -17,13 +17,8 @@
 * 🚀 **Launch & Feedback Hub** — Validate ideas, gather insights, and iterate faster.
 * 🛡️ **Moderation & Quality Control** — Maintain a constructive and professional environment.
 
-<<<<<<< HEAD
 ## Why Revora?
 
 Building great projects is only half the journey. Revora helps creators gain visibility, receive meaningful feedback, connect with like-minded builders, and continuously improve their work through a collaborative community.
 
 **Built to help builders learn, improve, and grow together.**
-=======
-
-Built to help builders learn, improve, and grow together
->>>>>>> 6aed4336c6fec99b748c6e86e24412e8a8a8df48
