@@ -1,18 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Eye,
-  Star,
-  ArrowRight,
-} from "lucide-react";
+import { Eye, Star, ArrowRight } from "lucide-react";
 
 type Props = {
-  projects: any[]; 
+  projects: any[];
 };
 
-export default function ProfileProjects({
-  projects = [],
-}: Props) {
+export default function ProfileProjects({ projects = [] }: Props) {
   return (
     <section
       className="
@@ -26,9 +20,7 @@ export default function ProfileProjects({
     >
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-white">
-            Projects
-          </h2>
+          <h2 className="text-2xl font-bold text-white">Projects</h2>
 
           <p className="mt-1 text-sm text-zinc-500">
             {projects.length} published projects
@@ -61,9 +53,7 @@ export default function ProfileProjects({
 
       {projects.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-cyan-500/10 py-16 text-center">
-          <p className="text-zinc-500">
-            No projects published yet.
-          </p>
+          <p className="text-zinc-500">No projects published yet.</p>
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -90,10 +80,7 @@ export default function ProfileProjects({
               {/* IMAGE */}
               <div className="relative aspect-video overflow-hidden">
                 <Image
-                  src={
-                    project.coverImage ||
-                    "/images/default.png"
-                  }
+                  src={project.coverImage || "/images/default.png"}
                   alt={project.title}
                   fill
                   className="
@@ -104,7 +91,7 @@ export default function ProfileProjects({
                   "
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
 
                 {/* Rating */}
                 <div className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full border border-cyan-500/30 bg-black/70 px-3 py-1 backdrop-blur-md">
@@ -163,12 +150,10 @@ export default function ProfileProjects({
                 {/* Tech Stack */}
                 {project.techStack?.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack
-                      .slice(0, 3)
-                      .map((tech: string) => (
-                        <span
-                          key={tech}
-                          className="
+                    {project.techStack.slice(0, 3).map((tech: string) => (
+                      <span
+                        key={tech}
+                        className="
                             rounded-full
                             border
                             border-white/10
@@ -182,10 +167,10 @@ export default function ProfileProjects({
                             hover:border-cyan-500/30
                             hover:text-cyan-300
                           "
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 )}
 
