@@ -14,9 +14,7 @@ export default async function ProjectsPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
       <div className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight">
-          Explore Projects
-        </h1>
+        <h1 className="text-4xl font-bold tracking-tight">Explore Projects</h1>
 
         <p className="mt-2 text-muted-foreground">
           Discover projects, explore ideas, and provide valuable feedback to
