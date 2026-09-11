@@ -15,9 +15,7 @@ type PageProps = {
   }>;
 };
 
-export default async function UserProfilePage({
-  params,
-}: PageProps) {
+export default async function UserProfilePage({ params }: PageProps) {
   const { username } = await params;
 
   await connectDB();
@@ -32,11 +30,11 @@ export default async function UserProfilePage({
     notFound();
   }
 
- const projects = await Project.find({
-  ownerId: user._id,
-})
-  .sort({ createdAt: -1 })
-  .lean();
+  const projects = await Project.find({
+    ownerId: user._id,
+  })
+    .sort({ createdAt: -1 })
+    .lean();
 
   return (
     <GridBackground>
