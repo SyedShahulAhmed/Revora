@@ -17,9 +17,7 @@ export default function AvatarUploader({
 
   const [uploading, setUploading] = useState(false);
 
-  async function handleUpload(
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) {
+  async function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
 
     if (!file) return;
@@ -58,9 +56,7 @@ export default function AvatarUploader({
     <div className="flex flex-col items-center gap-6 border-b border-white/10 pb-10 md:flex-row">
       <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-cyan-500/20">
         <Image
-          src={
-            value || "/images/avatar-placeholder.png"
-          }
+          src={value || "/images/avatar-placeholder.png"}
           alt="Avatar"
           fill
           className="object-cover"
@@ -74,13 +70,10 @@ export default function AvatarUploader({
       </div>
 
       <div className="space-y-3">
-        <h3 className="text-lg font-semibold text-white">
-          Profile Picture
-        </h3>
+        <h3 className="text-lg font-semibold text-white">Profile Picture</h3>
 
         <p className="max-w-sm text-sm text-neutral-400">
-          Upload a JPG, PNG, or WEBP image.
-          Maximum file size is 5 MB.
+          Upload a JPG, PNG, or WEBP image. Maximum file size is 5 MB.
         </p>
 
         <button
