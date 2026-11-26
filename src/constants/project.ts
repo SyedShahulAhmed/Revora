@@ -13,5 +13,4 @@ export const PROJECT_CATEGORIES = [
   "Other",
 ] as const;
 
-export type ProjectCategory =
-  (typeof PROJECT_CATEGORIES)[number];
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];

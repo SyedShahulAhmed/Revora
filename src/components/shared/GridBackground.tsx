@@ -54,7 +54,7 @@ export function GridBackground({ children, className }: GridBackgroundProps) {
       />
 
       {/* Fade */}
-      <div className="pointer-events-none absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
+      <div className="pointer-events-none absolute inset-0 bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black" />
 
       {/* Content */}
       <div className="relative z-10">{children}</div>
